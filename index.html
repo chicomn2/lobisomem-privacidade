@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Política de Privacidade - Lobisomem por Uma Noite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            --bg-dark: #101018;
+            --scroll-bg-top: #f7e9c8;
+            --scroll-bg-bottom: #e3c788;
+            --scroll-border: #b5925a;
+            --scroll-shadow: rgba(0, 0, 0, 0.6);
+            --scroll-text: #3b2c1b;
+            --accent: #7a4a23;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            font-family: "Georgia", "Times New Roman", serif;
+            background: radial-gradient(circle at top, #272742 0, var(--bg-dark) 45%, #050509 100%);
+            color: var(--scroll-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .scroll-wrapper {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .scroll {
+            position: relative;
+            background: linear-gradient(
+                180deg,
+                var(--scroll-bg-top) 0%,
+                #f1deb7 30%,
+                #ecd39d 60%,
+                var(--scroll-bg-bottom) 100%
+            );
+            border: 3px solid var(--scroll-border);
+            border-radius: 18px;
+            padding: 32px 22px;
+            box-shadow:
+                0 20px 50px var(--scroll-shadow),
+                inset 0 0 14px rgba(255, 255, 255, 0.35),
+                inset 0 0 35px rgba(0, 0, 0, 0.18);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efeito de pergaminho enrolado nas bordas superior e inferior */
+        .scroll::before,
+        .scroll::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 18px;
+            background: radial-gradient(circle at 50% 0,
+                    rgba(0, 0, 0, 0.35),
+                    transparent 55%);
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        .scroll::before {
+            top: 0;
+        }
+
+        .scroll::after {
+            bottom: 0;
+            transform: rotate(180deg);
+        }
+
+        .scroll-inner {
+            max-height: 80vh;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 4px;
+            letter-spacing: 0.04em;
+            color: #3c2615;
+            text-transform: uppercase;
+        }
+
+        h2.subtitle {
+            font-size: 1rem;
+            text-align: center;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            width: 120px;
+            height: 2px;
+            margin: 10px auto 18px auto;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .meta {
+            font-size: 0.85rem;
+            text-align: center;
+            margin-bottom: 18px;
+            color: #6d4c32;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-top: 16px;
+            margin-bottom: 6px;
+            color: #3b2614;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            margin: 6px 0 10px 18px;
+            padding-left: 4px;
+        }
+
+        li {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(122, 74, 35, 0.5);
+        }
+
+        a:hover {
+            border-bottom-style: solid;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            margin-top: 18px;
+            font-style: italic;
+            color: #6d4c32;
+            text-align: center;
+        }
+
+        /* Barra “rolinho” decorativa atrás do pergaminho */
+        .scroll-bar {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 96%;
+            height: 12px;
+            background: radial-gradient(circle at 50% 50%, #d2b076 0, #8a6235 45%, #3b2615 100%);
+            border-radius: 999px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        .scroll-bar.top {
+            top: -12px;
+        }
+
+        .scroll-bar.bottom {
+            bottom: -12px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .scroll {
+                padding: 22px 16px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            h2.subtitle {
+                font-size: 0.9rem;
+            }
+
+            p, li {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="scroll-wrapper">
+    <div class="scroll-bar top"></div>
+    <div class="scroll">
+        <div class="scroll-inner">
+            <h1>Política de Privacidade</h1>
+            <h2 class="subtitle">Lobisomem por Uma Noite</h2>
+            <div class="divider"></div>
+            <p class="meta">
+                Última atualização: <strong>10 de novembro de 2025</strong>
+                <!-- Você pode alterar essa data conforme necessário -->
+            </p>
+
+            <p>
+                A privacidade dos usuários é importante para nós. Esta Política de Privacidade descreve como o aplicativo
+                <strong>Lobisomem por Uma Noite</strong> lida com informações pessoais e dados do usuário.
+            </p>
+
+            <h3>1. Coleta de Informações</h3>
+            <p>
+                O aplicativo <strong>não coleta</strong>, <strong>não armazena</strong> e
+                <strong>não transmite</strong> quaisquer dados pessoais dos usuários.
+            </p>
+            <p>
+                O jogo não solicita informações como nome, e-mail, número de telefone, localização ou qualquer outro dado
+                pessoal identificável.
+            </p>
+
+            <h3>2. Permissões</h3>
+            <p>
+                O aplicativo pode solicitar algumas permissões estritamente necessárias para seu funcionamento adequado,
+                tais como:
+            </p>
+            <ul>
+                <li>
+                    <strong>Acesso à rede local (Wi-Fi/LAN)</strong> – utilizado exclusivamente para que os jogadores
+                    se conectem entre si dentro da mesma rede local, permitindo partidas multiplayer.
+                </li>
+                <li>
+                    <strong>Vibração</strong> – utilizada apenas para efeitos táteis durante o jogo.
+                </li>
+            </ul>
+            <p>
+                Nenhuma dessas permissões é utilizada para coleta ou transmissão de informações pessoais.
+            </p>
+
+            <h3>3. Conexão Multiplayer</h3>
+            <p>
+                A funcionalidade de jogo em grupo ocorre <strong>exclusivamente na rede local (LAN)</strong>.
+            </p>
+            <p>
+                Nenhum dado dos jogadores é enviado para servidores externos. Toda comunicação acontece apenas entre os
+                dispositivos dos próprios jogadores conectados à mesma rede.
+            </p>
+
+            <h3>4. Publicidade</h3>
+            <p>
+                O aplicativo <strong>não exibe anúncios</strong> e <strong>não utiliza serviços de rastreamento</strong>
+                ou perfis de usuário para fins de marketing.
+            </p>
+
+            <h3>5. Serviços de Terceiros</h3>
+            <p>
+                O aplicativo <strong>não utiliza</strong> serviços externos como Google Analytics, Firebase, AdMob ou
+                outros serviços de análise, monitoramento ou publicidade.
+            </p>
+
+            <h3>6. Armazenamento de Dados no Dispositivo</h3>
+            <p>
+                O aplicativo pode armazenar apenas configurações simples de uso, como por exemplo:
+            </p>
+            <ul>
+                <li>Preferências de áudio;</li>
+                <li>Configurações visuais básicas;</li>
+                <li>Opções de jogo previamente selecionadas.</li>
+            </ul>
+            <p>
+                Essas informações permanecem apenas no dispositivo do usuário e podem ser apagadas a qualquer momento
+                desinstalando-se o aplicativo.
+            </p>
+
+            <h3>7. Segurança</h3>
+            <p>
+                Como o aplicativo não coleta dados pessoais, não há risco de vazamento ou uso indevido de informações
+                sensíveis dos usuários.
+            </p>
+            <p>
+                A comunicação local entre dispositivos é limitada à rede privada utilizada pelos jogadores.
+            </p>
+
+            <h3>8. Crianças</h3>
+            <p>
+                O aplicativo pode ser utilizado por crianças, pois não coleta dados pessoais, não exibe anúncios e não
+                faz uso de rastreamento.
+            </p>
+            <p>
+                Ainda assim, recomenda-se que o uso do aplicativo por menores de idade seja acompanhado pelos
+                responsáveis, de acordo com as leis e orientações locais.
+            </p>
+
+            <h3>9. Alterações desta Política</h3>
+            <p>
+                Podemos atualizar esta Política de Privacidade periodicamente, por exemplo, em caso de alterações nas
+                funcionalidades do aplicativo ou em requisitos legais.
+            </p>
+            <p>
+                Sempre que a política for modificada, a data de “Última atualização” será alterada para refletir a versão
+                mais recente.
+            </p>
+
+            <h3>10. Contato</h3>
+            <p>
+                Em caso de dúvidas, sugestões ou solicitações relacionadas a esta Política de Privacidade, você pode
+                entrar em contato pelo e-mail:
+            </p>
+            <p>
+                <strong>
+                    <!-- SUBSTITUA PELO SEU E-MAIL DE CONTATO -->
+                    <a href="mailto:chicomn2@gmail.com">chicomn2@gmail.com</a>
+                </strong>
+            </p>
+
+            <p class="footer-note">
+                Ao utilizar o aplicativo <strong>Lobisomem por Uma Noite</strong>, você declara estar ciente e de acordo
+                com os termos desta Política de Privacidade.
+            </p>
+        </div>
+    </div>
+    <div class="scroll-bar bottom"></div>
+</div>
+</body>
+</html>
